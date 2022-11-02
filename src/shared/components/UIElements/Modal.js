@@ -39,7 +39,7 @@ const Modal = (props) => {
 				in={props.show}
 				mountOnEnter
 				unmountOnExit
-				timeout={200}
+				timeout={250}
 				classNames='modal'
 			>
 				<ModalOverlay {...props} />

@@ -11,6 +11,7 @@ import './App.css';
 import Users from './users/pages/Users';
 import NewPlace from './places/pages/NewPlace';
 import UpdatePlace from './places/pages/UpdatePlace';
+import Auth from './users/pages/Auth';
 
 const App = () => {
 	return (
@@ -20,6 +21,9 @@ const App = () => {
 				<Switch>
 					<Route path='/' exact>
 						<Users />
+					</Route>
+					<Route path='/auth'>
+						<Auth />
 					</Route>
 					<Route path='/:userId/places' exact>
 						<UserPlaces />
