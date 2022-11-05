@@ -1,42 +1,45 @@
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import PlaceList from '../components/PlaceList';
-
-const DUMMY_PLACES = [
-	{
-		id: 'p1',
-		title: 'Empire State Building',
-		imageUrl: 'http://placeimg.com/640/480/abstract',
-		description:
-			'Nulla non enim deserunt laborum fugiat proident nisi reprehenderit deserunt. Velit pariatur eu est do. Enim laboris magna non consequat proident. Sit nostrud mollit excepteur ea. Ea commodo aliquip fugiat nulla. Minim elit aliqua ipsum qui culpa. Cupidatat esse Lorem voluptate aliqua enim Lorem cillum incididunt ad ullamco culpa nostrud aute eu.',
-		address: '20W 34th St, New York, NY 1001',
-		location: {
-			lat: -34.397,
-			lng: 150.644,
-		},
-		creator: 'u1',
-	},
-	{
-		id: 'p2',
-		title: 'Empire State Building',
-		imageUrl: 'http://placeimg.com/640/480/abstract',
-		description:
-			'Nulla non enim deserunt laborum fugiat proident nisi reprehenderit deserunt. Velit pariatur eu est do. Enim laboris magna non consequat proident. Sit nostrud mollit excepteur ea. Ea commodo aliquip fugiat nulla. Minim elit aliqua ipsum qui culpa. Cupidatat esse Lorem voluptate aliqua enim Lorem cillum incididunt ad ullamco culpa nostrud aute eu.',
-		address: '20W 34th St, New York, NY 1001',
-		location: {
-			lat: -34.397,
-			lng: 150.644,
-		},
-		creator: 'u2',
-	},
-];
+import { useHttpClient } from '../../shared/hooks/http-hook';
+import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
+import ErrorModal from '../../shared/components/UIElements/ErrorModal';
 
 const UserPlaces = () => {
 	const userId = useParams().userId;
-	const loadedPlace = DUMMY_PLACES.filter(
-		(place) => place.creator === userId
+	const { isLoading, error, sendRequest, clearError } = useHttpClient();
+	const [loadedPlaces, setLoadedPlaces] = useState([]);
+	const placeDeletedHandler = (deletedPlaceId) => {
+		setLoadedPlaces((prevPlaces) =>
+			prevPlaces.filter((place) => place.id !== deletedPlaceId)
+		);
+	};
+	useEffect(() => {
+		const fetchPlaces = async () => {
+			const responseData = await sendRequest(
+				`http://localhost:8000/api/places/user/${userId}`
+			);
+			setLoadedPlaces(responseData.places);
+		};
+		fetchPlaces();
+	}, [sendRequest, userId]);
+	return (
+		<>
+			{isLoading && (
+				<div className='center'>
+					<LoadingSpinner />
+				</div>
+			)}
+			<ErrorModal error={error} onClear={clearError} />
+			{!isLoading && loadedPlaces && (
+				<PlaceList
+					items={loadedPlaces}
+					onDeletePlace={placeDeletedHandler}
+				/>
+			)}
+		</>
 	);
-	return <PlaceList items={loadedPlace} />;
 };
 
 export default UserPlaces;
