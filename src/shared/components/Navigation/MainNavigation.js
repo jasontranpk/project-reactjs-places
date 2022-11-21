@@ -37,7 +37,10 @@ const MainNavigation = (props) => {
 				</button>
 				<h1 className='main-navigation__title'>
 					<Link to='/'>
-						<img src='./logo.png' alt='logo' width='200px' />
+						<img
+							src={`${process.env.REACT_APP_ASSET_URL}/logo.png`}
+							alt='logo'
+						/>
 					</Link>
 				</h1>
 				<nav className='main-navigation__header-nav'>
