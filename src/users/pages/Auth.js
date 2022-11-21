@@ -111,6 +111,11 @@ const Auth = () => {
 				{isLoading && <LoadingSpinner asOverlay />}
 				<h2>{isSignupMode ? 'SIGN UP FORM' : 'LOGIN REQUIRED'}</h2>
 				<hr />
+				{!isSignupMode && (
+					<h4 style={{ color: 'blue' }}>
+						Demo Account: sample1@gmail.com <br /> Password: 111111
+					</h4>
+				)}
 				<form className='place-form' onSubmit={formSubmitHandler}>
 					{isSignupMode && (
 						<>
