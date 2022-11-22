@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# project-reactjs-places - FRONT END
+Place Sharing Application -  SINGLE PAGE REACT APPLICATION
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- Table of Contents -->
+# :notebook_with_decorative_cover: Table of Contents
 
-## Available Scripts
+- [About the Project](#star2-about-the-project)
+  * [Screenshots](#camera-screenshots)
+  * [Tech Stack](#space_invader-tech-stack)
+  * [Features](#dart-features)
+- [Getting Started](#toolbox-getting-started)
+- [Contact](#handshake-contact)
 
-In the project directory, you can run:
+  
 
-### `npm start`
+<!-- About the Project -->
+## :star2: About the Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<!-- Screenshots -->
+### :camera: Screenshots
 
-### `npm test`
+<div align="center"> 
+  <img src="https://user-images.githubusercontent.com/62680684/203251601-8ee6c598-1a7e-4c75-b2a6-ed3c50c4e340.png" alt="screenshot" />
+  <a href="http://d3ahiru7au7zsk.cloudfront.net"> DEMO LINK </a>
+</div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+<!-- TechStack -->
+### :space_invader: Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<ul>
+  <li><a href="https://nodejs.org/en/">ReactJS (custom hooks, useReducer, useContext...)</a></li>
+  <li><a href="https://reactrouter.com/en/main">ReactRouter</a></li>
+  <li><a href="https://firebase.google.com/">Firebase</a></li>
+</ul>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+<!-- Features -->
+### :dart: Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Authentication
+- Add/ Update Places
+- Sign in/ Sign Up
+- Convert location from address to coordinates (GG Map)
+- Upload Images to AWS S3
+- Data Validations
+- ...
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- Getting Started -->
+## 	:toolbox: Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<!-- Prerequisites -->
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<!-- Run Locally -->
+### :running: Run Locally
 
-## Learn More
+Clone the project
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  git clone https://github.com/jasontranpk/project-reactjs-places
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Go to the project directory
 
-### Code Splitting
+```bash
+  cd project-reactjs-places
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Install dependencies
 
-### Analyzing the Bundle Size
+```bash
+  npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Start the server
 
-### Making a Progressive Web App
+```bash
+  npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<!-- Contact -->
+## :handshake: Contact
 
-### Advanced Configuration
+Son Tran
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Back End Project Github Link: <a href="https://github.com/jasontranpk/nodejs-restapi-places">https://github.com/jasontranpk/nodejs-restapi-places</a>
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Front End Project Github Link:  <a href="https://github.com/jasontranpk/project-reactjs-places">https://github.com/jasontranpk/project-reactjs-places</a>
